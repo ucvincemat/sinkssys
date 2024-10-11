@@ -1,11 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinks HR - Employee List</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #modal:target {
+        display: flex;
+    }
+</style>
 </head>
-<body>
-    Test test
+
+<body class="bg-gray-100 p-8">
+
+  <!-- Employee Table -->
+  <div class="container mx-auto">
+    <table class="min-w-full bg-white border border-gray-200">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="py-2 px-4 text-left font-medium text-gray-700">Name</th>
+          <th class="py-2 px-4 text-left font-medium text-gray-700">Job Title</th>
+          <th class="py-2 px-4 text-left font-medium text-gray-700">Department</th>
+          <th class="py-2 px-4 text-left font-medium text-gray-700">Email</th>
+          <th class="py-2 px-4 text-left font-medium text-gray-700">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr class="border-t border-gray-200">
+          <td class="py-2 px-4">Ivan Petrov</td>
+          <td class="py-2 px-4">Software Engineer</td>
+          <td class="py-2 px-4">IT</td>
+          <td class="py-2 px-4">ivan.petrov@sinksrus.com</td>
+          <td class="py-2 px-4">
+            <button onclick="openModal('ivan')" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3">Info</button>
+          </td>
+        </tr>
+        
+        <tr class="border-t border-gray-200">
+          <td class="py-2 px-4">Pedro Los Baños</td>
+          <td class="py-2 px-4">Marketing Manager</td>
+          <td class="py-2 px-4">Marketing</td>
+          <td class="py-2 px-4">pedro_los_banos@sinksrus.com</td>
+          <td class="py-2 px-4">
+            <button onclick="openModal('pedro')" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3">Info</button>
+          </td>
+        </tr>
+        
+        <tr class="border-t border-gray-200">
+          <td class="py-2 px-4">Ana Gómez</td>
+          <td class="py-2 px-4">HR Specialist</td>
+          <td class="py-2 px-4">HR</td>
+          <td class="py-2 px-4">ana.gomez@sinksrus.com</td>
+          <td class="py-2 px-4">
+            <button onclick="openModal('ana')" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3">Info</button>
+          </td>
+        </tr>
+        
+        <tr class="border-t border-gray-200">
+          <td class="py-2 px-4">John Wu</td>
+          <td class="py-2 px-4">Sales Associate</td>
+          <td class="py-2 px-4">Sales</td>
+          <td class="py-2 px-4">john.wu@sinksrus.com</td>
+          <td class="py-2 px-4">
+            <button onclick="openModal('john')" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3">Info</button>
+          </td>
+        </tr>
+        
+        <tr class="border-t border-gray-200">
+          <td class="py-2 px-4">Emma Wilson</td>
+          <td class="py-2 px-4">CEO</td>
+          <td class="py-2 px-4">Admin</td>
+          <td class="py-2 px-4">emma@sinksrus.com</td>
+          <td class="py-2 px-4">
+            <button onclick="openModal('emma')" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3">Info</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+   <!-- Modal -->
+   <div id="modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center" onclick="closeModal()">
+    <div class="bg-white p-6 max-w-md w-full" onclick="event.stopPropagation()">
+      <h2 class="text-2xl font-semibold mb-4" id="modal-title"></h2>
+      <p id="modal-content"></p>
+      <button onclick="closeModal()" class="mt-4 bg-red-500 hover:bg-red-600 text-white py-1 px-4">Close</button>
+    </div>
+  </div>
+  
+  <script src="/employee_modal.js"></script>
+
 </body>
 </html>
